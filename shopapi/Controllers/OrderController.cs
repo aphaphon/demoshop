@@ -44,5 +44,29 @@ namespace shopapi.Controllers
         {
             return histories;
         }
+
+        [HttpDelete("{id}")]
+        public void Delete(string id)
+        {
+            var selectedHistory = histories.FirstOrDefault(it => it.Id == id);
+            if (selectedHistory == null)
+            {
+                return;
+            }
+
+            histories.Remove(selectedHistory);
+        }
+
+        [HttpPut("{id}")]
+        public void Put(string id, [FromBody] History value)
+        {
+            var selectedHistory = histories.FirstOrDefault(it => it.Id == id);
+            if (selectedHistory == null)
+            {
+                return;
+            }
+
+            selectedHistory.Name = value.Name;
+        }
     }
 }
