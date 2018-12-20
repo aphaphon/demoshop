@@ -1,0 +1,21 @@
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>รหัส</ion-label>
+      <ion-input type="name" [(ngModel)]="ProductOrderId"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>จำนวน</ion-label>
+      <ion-input type="name" [(ngModel)]="ProductOrderAmount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="OrderProduct()">สั่งซื้อ</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of products">
+      {{ item.id }} {{ item.name }} {{ item.price }}
+    </button>  
+  </ion-list>
+</ion-content>
