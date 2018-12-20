@@ -1,18 +1,21 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>รหัส</ion-label>
+      <ion-input type="name" [(ngModel)]="ProductOrderId"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>จำนวน</ion-label>
+      <ion-input type="name" [(ngModel)]="ProductOrderAmount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="OrderProduct()">สั่งซื้อ</button>
+    </ion-item>
+  </ion-list>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list>
+    <button ion-item *ngFor="let item of products">
+      {{ item.id }} {{ item.name }} {{ item.price }}
+    </button>  
+  </ion-list>
 </ion-content>
