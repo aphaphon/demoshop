@@ -1,3 +1,5 @@
+# API
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,10 +70,10 @@ namespace demoapi.Controllers
         public double Average { get; set; }
     }
 }
+```
 
-
-// IONIC
-
+# Ionic
+```
 myclassRoom: ClassRoom;
 
 this.http.get<ClassRoom>("ENTER_YOUR_API_HERE").subscribe(
@@ -97,3 +99,4 @@ class Student
    public Id: string;
 
 }
+```
